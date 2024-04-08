@@ -18,7 +18,7 @@ import { LibraryService } from '../../../services/books.service';
 
 export class LibraryListComponent implements OnInit 
 {
-    displayedColumns: string[] = ["id", "name", "pageCount", "yearRelease"];
+    displayedColumns: string[] = ["id", "name", "pageCount", "yearRelease", "ImageUrl", "description", "inStock"];
     books: BookModel[] = [];
     tableSource = new MatTableDataSource<BookModel>([]);
 

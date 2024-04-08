@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './delete-confirmation-dialog.component.html',
   styleUrl: './delete-confirmation-dialog.component.css'
 })
-export class DeleteConfirmationDialogComponent {
+export class DeleteConfirmationDialogComponent 
+{
 
 }

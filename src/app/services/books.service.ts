@@ -10,7 +10,7 @@ const api = "https://localhost:7206/api/books/"
 })
 
 export class LibraryService {
-
+  
     constructor(private http: HttpClient) { }
   
     getAll(): Observable<BookModel[]> {
@@ -35,7 +35,7 @@ export class LibraryService {
       }
   
       const headers = new HttpHeaders({ 'enctype': 'multipart/form-data' });
-      return this.http.post(api, formData, { headers: headers }); // [FromForm]
+      return this.http.post(api, formData, { headers: headers }); 
     }
   
     delete(id: number): Observable<any> {

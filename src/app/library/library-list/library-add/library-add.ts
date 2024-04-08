@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LibraryService } from "../../../services/books.service";
 import { CreateBookModel, BookModel } from "../../../services/library";
 
+
 @Component({
     selector: 'app-add-book',
     standalone: true,
@@ -40,12 +41,18 @@ export class AddBookComponent implements OnInit
         this.form = this.fb.group({
           name: ['', Validators.required],
           description: ['', Validators.minLength(10)],
+          yearRelease: ['', Validators.min(1)],
           pageCount: [Validators.min(1)],
-          image: [null, Validators.required]
+          image: [null, Validators.required],
+          inStock: [false]
         });
     }
     ngOnInit(): void {
         
+    }
+    
+    back(): void {
+      this.location.back();
     }
 
     onSubmit(): void {

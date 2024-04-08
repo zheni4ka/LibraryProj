@@ -43,9 +43,10 @@ export class EditBookComponent
                 id: [0, Validators.required],
                 name: ['', Validators.required],
                 description: ['', Validators.minLength(10)],
+                yearRelease: ['', Validators.min(1)],
                 inStock: [false],
                 imageUrl: ['', Validators.required],
-                pageCount: [Validators.required, Validators.minLength(0)],
+                pageCount: [Validators.required, Validators.min(1)],
               });
         }
     

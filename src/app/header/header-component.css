@@ -1,0 +1,11 @@
+.filled_span
+{
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+}
+
+.separator1
+{
+    width: 50px;
+}
