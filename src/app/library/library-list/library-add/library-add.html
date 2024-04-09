@@ -4,3 +4,47 @@
     </button>
     <span>Add new Book</span>
 </h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" required matInput placeholder="Enter book name">
+        @if (form.get("name")?.invalid) {
+        <mat-error>Invalid name value.</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Year Release</mat-label>
+        <input formControlName="yearRelease" required matInput placeholder="Enter year release of this book">
+        @if(form.get("yearRelease")?.invalid)
+        {
+           <mat-error>Invalid number</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Pages</mat-label>
+        <input formControlName="pageCount" required matInput placeholder="Enter number of pages">
+        @if(form.get("pageCount")?.invalid)
+        {
+           <mat-error>Invalid number</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput placeholder="Enter description for this book"></textarea>
+        @if(form.get("description")?.invalid)
+        {
+            <mat-error>Required more than 10 symbols</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-checkbox formControlName="inStock" color="primary">In Stock</mat-checkbox>
+
+    <div class="buttons-block">
+        <button type="reset" mat-raised-button>Cancel</button>
+        <button type="submit" mat-raised-button color="accent">Create</button>
+    </div>
+</form>

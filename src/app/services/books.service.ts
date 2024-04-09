@@ -12,7 +12,9 @@ const api = "https://localhost:7206/api/books/"
 export class LibraryService {
   
     constructor(private http: HttpClient) { }
-  
+
+    libDB : Array<BookModel> = new Array();
+    
     getAll(): Observable<BookModel[]> {
       return this.http.get<BookModel[]>(api);
     }
@@ -27,7 +29,6 @@ export class LibraryService {
   
     create(item: CreateBookModel): Observable<any> {
       console.log("Creating product:", item);
-  
       const formData = new FormData();
   
       for (const key in item) {

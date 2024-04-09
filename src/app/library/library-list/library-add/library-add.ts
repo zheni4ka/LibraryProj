@@ -41,9 +41,8 @@ export class AddBookComponent implements OnInit
         this.form = this.fb.group({
           name: ['', Validators.required],
           description: ['', Validators.minLength(10)],
-          yearRelease: ['', Validators.min(1)],
-          pageCount: [Validators.min(1)],
-          image: [null, Validators.required],
+          yearRelease: ['', [Validators.required, Validators.min(1)]],
+          pageCount: ['', [Validators.required, Validators.min(1)]],
           inStock: [false]
         });
     }
@@ -56,6 +55,8 @@ export class AddBookComponent implements OnInit
     }
 
     onSubmit(): void {
+      console.log(this.form.value);
+      
         if (!this.form.valid) {
           alert("Invalid data!")
           return;

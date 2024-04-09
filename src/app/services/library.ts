@@ -4,7 +4,7 @@ export interface BookModel
     name: string;
     pageCount: number;
     yearRelease: number;
-    imageUrl: string;
+    //imageUrl: string;
     description: null | string;
     inStock: boolean;
 }
@@ -14,7 +14,7 @@ export interface CreateBookModel
     name: string;
     pageCount: number;
     yearRelease: number;
-    image: File | null;
+    //image: File | null;
     description: string | null;
     inStock: boolean;
 }
